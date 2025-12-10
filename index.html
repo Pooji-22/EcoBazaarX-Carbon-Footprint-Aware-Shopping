@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EcoBazaarX</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #e8f5e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .center-box {
+            text-align: center;
+        }
+
+        .logo-big {
+            width: 400px;
+            border-radius: 20px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            color: #2e7d32;
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .main-title.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .btn-group.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .btn, .btn-outline {
+            padding: 12px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn {
+            background: #2e7d32;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #256428;
+        }
+
+        .btn-outline {
+            border: 2px solid #2e7d32;
+            color: #2e7d32;
+        }
+
+        .btn-outline:hover {
+            background: #2e7d32;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="center-box">
+
+    <!-- Logo Video -->
+    <video id="introVideo" autoplay muted class="logo-big">
+        <source src="C:\Users\karth\Downloads\assets\Eco_Bazaar_logo.mp4" type="video/mp4">
+    </video>
+
+    <!-- Title (Initially Hidden) -->
+    <h1 id="titleText" class="main-title">EcoBazaarX</h1>
+
+    <!-- Buttons (Initially Hidden) -->
+    <div id="buttons" class="btn-group">
+        <a href="register.html" class="btn">Register</a>
+        <a href="login.html" class="btn-outline">Login</a>
+    </div>
+
+</div>
+
+<script>
+    const video = document.getElementById("introVideo");
+    const title = document.getElementById("titleText");
+    const buttons = document.getElementById("buttons");
+
+    // Set video playback speed
+    video.playbackRate = 1.5;
+
+    // When video ends → hide video, show title + buttons with animation
+    video.onended = () => {
+        video.style.display = "none";   // hide video
+
+        // Animate title
+        title.classList.add("show");
+
+        // Show buttons after small delay
+        setTimeout(() => {
+            buttons.classList.add("show");
+        }, 500);
+    };
+</script>
+
+
+</body>
+</html>

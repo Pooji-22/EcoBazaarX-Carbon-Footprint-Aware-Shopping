@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EcoBazaarX Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Circular Image -->
+    <div class="eco-circle">
+        <img src="C:\Users\karth\Downloads\eco.png" alt="Eco Icon">
+    </div>
+
+    <h2 class="title" id="welcomeTitle">Welcome to EcoBazaarX</h2>
+    <p class="subtitle">Carbon-Footprint Aware Shopping</p>
+
+    <div class="btn-group">
+        <a href="#" class="main-btn">Shop Now</a>
+        
+    </div>
+
+    <a href="login.html" class="logout">Logout</a>
+
+</div>
+
+<script>
+// Get user's name from localStorage
+const userName = localStorage.getItem("userName");
+if(userName) {
+    document.getElementById("welcomeTitle").textContent = `Hello, ${userName}! Welcome to EcoBazaarX`;
+}
+</script>
+
+</body>
+</html>
